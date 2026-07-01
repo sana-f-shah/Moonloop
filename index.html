@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Moonloop</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonloop</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Moonloop</h1>
+    <main class="game">
 
-  <div id="light">Light: 0</div>
+        <h1>Moonloop</h1>
 
-  <button id="clickBtn">Tap</button>
+        <p class="story">
+            The moon has forgotten its light.<br>
+            Gather Moonlight and awaken what has long been sleeping.
+        </p>
 
-  <script src="app.js"></script>
+        <div class="moon">
+            🌑
+        </div>
+
+        <div class="counter">
+            <h2>✨ Moonlight</h2>
+            <p id="moonlight">0</p>
+        </div>
+
+        <button id="gatherButton">
+            Touch the Moon
+        </button>
+
+        <section class="shop">
+
+            <h2>Restoration</h2>
+
+            <div class="upgrade">
+
+                <h3>🪨 Moonstone</h3>
+
+                <p>Ancient fragments begin storing Moonlight once more.</p>
+
+                <p>Cost: <strong>10 Moonlight</strong></p>
+
+                <button id="buyMoonstone">
+                    Restore
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <nav>
+        <button>Home</button>
+        <button>Life</button>
+        <button>World</button>
+        <button>Log</button>
+    </nav>
+
+    <script src="app.js"></script>
+
 </body>
 </html>
