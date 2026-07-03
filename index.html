@@ -4,47 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moonloop</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <main class="game">
+<div class="app">
+
+    <header>
 
         <h1>Moonloop</h1>
 
-        <p class="story">
-            The moon has forgotten its light.<br>
-            Gather Moonlight and awaken what has long been sleeping.
-        </p>
-
-        <div class="moon">
-            🌑
-        </div>
-
-        <div class="counter">
-            <h2>✨ Moonlight</h2>
-            <p id="moonlight">0</p>
-        </div>
-
-        <button id="gatherButton">
-            Touch the Moon
+        <button class="menu-button">
+            ☾
         </button>
 
-        <section class="shop">
+    </header>
 
-            <h2>Restoration</h2>
+    <main>
 
-            <div class="upgrade">
+        <section class="hero">
 
-                <h3>🪨 Moonstone</h3>
+            <div class="moon" id="moon">
+                🌑
+            </div>
 
-                <p>Ancient fragments begin storing Moonlight once more.</p>
+            <p class="story">
+                The moon has forgotten its light.
+            </p>
 
-                <p>Cost: <strong>10 Moonlight</strong></p>
+            <div class="counter">
 
-                <button id="buyMoonstone">
-                    Restore
-                </button>
+                <div id="moonlight">
+                    0
+                </div>
+
+                <span>
+                    Moonlight
+                </span>
+
+            </div>
+
+            <p class="clickHint">
+                Click anywhere to gather Moonlight
+            </p>
+
+        </section>
+
+        <section class="panels">
+
+            <div class="journal">
+
+                <h2>📜 Journal</h2>
+
+                <p id="statusMessage">
+                    The moon waits patiently...
+                </p>
+
+            </div>
+
+            <div class="restoration">
+
+                <h2>🌙 Restoration</h2>
+
+                <div class="restorationList">
+
+                    <div class="upgrade">
+
+                        <h3>🪨 Moonstone</h3>
+
+                        <p>
+                            Restored:
+                            <span id="moonstoneCount">0</span>
+                        </p>
+
+                        <button id="buyMoonstone">
+                            Restore (10)
+                        </button>
+
+                    </div>
+
+                    <div class="upgrade locked">🌿 Lunar Moss</div>
+
+                    <div class="upgrade locked">🌸 Moon Blossom</div>
+
+                    <div class="upgrade locked">🦋 Lumen Moths</div>
+
+                    <div class="upgrade locked">🌳 Crystal Grove</div>
+
+                </div>
 
             </div>
 
@@ -52,14 +101,9 @@
 
     </main>
 
-    <nav>
-        <button>Home</button>
-        <button>Life</button>
-        <button>World</button>
-        <button>Log</button>
-    </nav>
+</div>
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>

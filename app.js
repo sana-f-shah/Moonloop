@@ -1,40 +1,110 @@
+// -------------------------
+// Moonloop
+// Version 0.2
+// -------------------------
+
+// Game State
+
 let moonlight = 0;
 let moonstones = 0;
 
+// Elements
+
 const moonlightDisplay = document.getElementById("moonlight");
+const moonstoneDisplay = document.getElementById("moonstoneCount");
+const statusMessage = document.getElementById("statusMessage");
 
-const gatherButton = document.getElementById("gatherButton");
-const moonstoneButton = document.getElementById("buyMoonstone");
+const hero = document.querySelector(".hero");
+const buyMoonstoneButton = document.getElementById("buyMoonstone");
 
-gatherButton.addEventListener("click", gatherMoonlight);
-moonstoneButton.addEventListener("click", restoreMoonstone);
+// -------------------------
+// Display
+// -------------------------
+
+function updateDisplay() {
+
+    moonlightDisplay.textContent = Math.floor(moonlight);
+
+    moonstoneDisplay.textContent = moonstones;
+
+}
+
+// -------------------------
+// Journal
+// -------------------------
+
+function setStatus(message) {
+
+    statusMessage.textContent = message;
+
+}
+
+// -------------------------
+// Clicking
+// -------------------------
 
 function gatherMoonlight() {
+
     moonlight++;
+
     updateDisplay();
+
 }
+
+// Click anywhere in the hero section
+
+hero.addEventListener("click", gatherMoonlight);
+
+// -------------------------
+// Moonstones
+// -------------------------
 
 function restoreMoonstone() {
 
     if (moonlight >= 10) {
 
         moonlight -= 10;
+
         moonstones++;
 
-        alert("The first Moonstone has awakened.");
+        if (moonstones === 1) {
+
+            setStatus("🌙 The first Moonstone has awakened.");
+
+        } else {
+
+            setStatus("✨ Another Moonstone begins to glow.");
+
+        }
 
         updateDisplay();
 
     } else {
 
-        alert("You need more Moonlight.");
+        setStatus("Not enough Moonlight.");
 
     }
 
 }
 
-function updateDisplay() {
+buyMoonstoneButton.addEventListener("click", restoreMoonstone);
 
-    moonlightDisplay.textContent = moonlight;
+// -------------------------
+// Passive Generation
+// -------------------------
+
+function gameTick() {
+
+    moonlight += moonstones;
+
+    updateDisplay();
 
 }
+
+setInterval(gameTick, 1000);
+
+// -------------------------
+// Initial Display
+// -------------------------
+
+updateDisplay();

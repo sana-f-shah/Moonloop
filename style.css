@@ -1,72 +1,223 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0B1026;
-    color: #F4F7FF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.game {
-    text-align: center;
-    max-width: 600px;
-    padding: 40px 20px;
+body{
+
+    background:#081120;
+
+    color:#F5F7FF;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    height:100vh;
+
+    overflow:hidden;
 }
 
-.story {
-    color: #B8C2E0;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.app{
+
+    width:100%;
+
+    height:100vh;
+
+    padding:45px 45px 35px;
+
+    display:flex;
+
+    flex-direction:column;
 }
 
-.moon {
-    font-size: 100px;
-    margin: 20px 0;
+header{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    margin-bottom:35px;
 }
 
-.counter h2 {
-    color: #F6E7A8;
-    margin-bottom: 0;
+header h1{
+
+    font-size:2.2rem;
+
+    font-weight:300;
+
+    letter-spacing:2px;
 }
 
-#moonlight {
-    font-size: 40px;
-    margin-top: 10px;
+.menu-button{
+
+    position:absolute;
+
+    right:0;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
 }
 
-button {
-    background: #26345C;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 24px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
+main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
 }
 
-button:hover {
-    background: #33477C;
+.hero{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
 }
 
-.shop {
-    margin-top: 50px;
+.moon{
+
+    font-size:160px;
+
+    margin-bottom:15px;
+
+    user-select:none;
+
+    cursor:pointer;
 }
 
-.upgrade {
-    border: 1px solid #33477C;
-    border-radius: 12px;
-    padding: 20px;
+.story{
+
+    color:#B5BEDA;
+
+    margin-bottom:35px;
 }
 
-nav {
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    background: #111934;
+.counter{
+
+    margin-bottom:25px;
+}
+
+#moonlight{
+
+    font-size:4.5rem;
+
+    font-weight:200;
+
+    color:#F6E7A8;
+}
+
+.counter span{
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    color:#A7B0CF;
+
+    font-size:.9rem;
+}
+
+.clickHint{
+
+    color:#7E89AE;
+}
+
+.panels{
+
+    display:flex;
+
+    gap:25px;
+
+    height:240px;
+}
+
+.journal,
+.restoration{
+
+    flex:1;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:22px;
+}
+
+.journal h2,
+.restoration h2{
+
+    margin-bottom:18px;
+
+    font-size:1.2rem;
+
+    font-weight:400;
+}
+
+.restorationList{
+
+    overflow-y:auto;
+
+    height:150px;
+
+    padding-right:10px;
+}
+
+.upgrade{
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+}
+
+.upgrade button{
+
+    margin-top:10px;
+
+    width:100%;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#4B5F9C;
+
+    color:white;
+}
+
+.locked{
+
+    opacity:.45;
+
+    text-align:center;
 }
